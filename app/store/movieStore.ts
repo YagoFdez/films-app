@@ -1,17 +1,16 @@
 import { create } from 'zustand';
 import { MovieState, Movie, MovieRated } from '../types';
-import {
-  createGuestSession,
-  rateFilm,
-  getRatedMovies,
-} from '../lib/api';
+import { createGuestSession, rateFilm, getRatedMovies } from '../lib/api';
 
 export const useFilmStore = create<MovieState>()((set, get) => ({
   movies: [],
   ratedMovies: [],
   searchQuery: '',
   selectedMovie: null,
-  guestSessionId: typeof window !== 'undefined' ? localStorage.getItem('guestSessionId') : null,
+  guestSessionId:
+    typeof window !== 'undefined'
+      ? localStorage.getItem('guestSessionId')
+      : null,
 
   setSearchQuery: (query: string) => set({ searchQuery: query }),
   setMovies: (movies: Movie[]) => set({ movies }),
