@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useFilmStore } from "@/app/store/movieStore"
 
 export const MoviesList = () => {
-  const { searchQuery, setSelectedMovie, setMovies } = useFilmStore();
+  const { searchQuery, setSelectedMovie } = useFilmStore();
 
   const { data: movies, isLoading, error } = useQuery<Movie[], Error>({
     queryKey: ['movies', searchQuery],
