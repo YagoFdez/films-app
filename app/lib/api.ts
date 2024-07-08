@@ -18,3 +18,13 @@ export const getPopularFilms = async () => {
       throw error;
     }
   };
+
+export const searchMovies = async (query:string) => {
+  try {
+     const response = await api.get('/search/movie', { params: { query }});
+     return response.data.results;
+  } catch (error) {
+    console.error('Error searching movie:', error);
+    throw error;
+  }
+};
