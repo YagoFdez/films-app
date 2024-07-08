@@ -8,8 +8,12 @@ import {
 import { MovieDetail } from "./components/MovieDetails/MovieDetails";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { useFilmStore } from "./store/movieStore";
+import { useInitGuestSession } from './hooks/useInitGuestSession';
+
 
 export default function Home() {
+  const guestSessionId = useInitGuestSession();
+  console.log(guestSessionId);
   const queryClient = new QueryClient()
   const { selectedMovie, setSelectedMovie } = useFilmStore();
 

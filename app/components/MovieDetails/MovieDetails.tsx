@@ -1,5 +1,8 @@
+'use client'
+
 import { Movie } from "@/app/types";
 import Image from "next/image";
+import { RatingMovie } from "../RatingMovie/RatingMovie";
 
 type Props = {
     movieInfo: Movie;
@@ -27,6 +30,7 @@ export const MovieDetail = ({movieInfo, onClose} : Props) => {
                     <p className="text-gray-600 text-sm mb-2">{movieInfo.release_date}</p>
                     <p className="text-gray-800 text-sm">{movieInfo.overview}</p>
                 </div>
+                <RatingMovie/>
             </div>
    );
 }
