@@ -5,3 +5,11 @@ export interface Movie {
     poster_path: string;
     overview: string;
 }
+
+export interface MovieState {
+    movies: Movie[];
+    searchQuery: string;
+    fetchMovies: () => Promise<void>;
+    searchMovies: (query : string) => Promise<void>;
+    setSearchQuery: (query: string) => void;
+}
