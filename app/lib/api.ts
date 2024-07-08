@@ -8,3 +8,13 @@ const api = axios.create({
     timeout: 1000,
     params: {api_key: API_KEY},
 })
+
+export const getPopularFilms = async () => {
+    try {
+      const response = await api.get('/movie/popular');
+      return response.data.results; 
+    } catch (error) {
+      console.error('Error fetching popular films:', error);
+      throw error;
+    }
+  };
