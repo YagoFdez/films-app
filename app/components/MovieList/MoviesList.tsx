@@ -3,8 +3,12 @@ import Image from "next/image";
 import { getPopularFilms } from "@/app/lib/api"
 import { useQuery } from '@tanstack/react-query'
 
+type Props = {
+    onMovieClick: (movie: Movie) => void;
+  };
 
-export const Movies = () => {
+
+export const MoviesList = ({onMovieClick} : Props) => {
 
     const { data: movies, isLoading, error } = useQuery<Movie[], Error>({
         queryKey: ['popularMovies'],
@@ -19,7 +23,7 @@ export const Movies = () => {
                 {movies && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {movies.map(movie => (
-                            <div key={movie.id} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+                            <div key={movie.id} onClick={() => onMovieClick(movie)} className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
                                 <div className="relative h-64">
                                     <Image
                                         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
