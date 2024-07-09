@@ -17,7 +17,7 @@ export default function MyListPage() {
 
   return (
     <div className="w-full mx-auto">
-      <h1 className="text-2xl font-bold mb-4">My Rated Movies</h1>
+      <h1 className="text-2xl font-bold mb-4 text-black">My Rated Movies</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {ratedMovies.map((movie) => (
           <div
@@ -33,7 +33,7 @@ export default function MyListPage() {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{movie.title}</h2>
+              <h2 className="text-xl font-semibold mb-2 text-black">{movie.title}</h2>
               <p className="text-gray-600 text-sm mb-2">
                 Rating: {movie.rating}/10
               </p>
