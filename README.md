@@ -1,7 +1,7 @@
 # DOTFILMS APP
 
 ## Descripción
-Esta es una mini-webapp de películas que permite a los usuarios ver un listado de películas populares, buscar películas, ver detalles de cada película, calificarlas y guardarlas como favoritas. La aplicación utiliza la API de TheMovieDB para obtener la información de las películas.
+Esta es una mini-webapp de películas que permite a los usuarios ver un listado de películas populares, buscar películas, ver detalles de cada película y calificarlas guardandose en una lista individual. La aplicación utiliza la API de TheMovieDB para obtener la información de las películas.
 
 ## Características principales
 - Listado de películas populares
