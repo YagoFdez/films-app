@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DOTFILMS APP
 
-## Getting Started
+## Descripción
+Esta es una mini-webapp de películas que permite a los usuarios ver un listado de películas populares, buscar películas, ver detalles de cada película, calificarlas y guardarlas como favoritas. La aplicación utiliza la API de TheMovieDB para obtener la información de las películas.
 
-First, run the development server:
+## Características principales
+- Listado de películas populares
+- Búsqueda de películas
+- Visualización de detalles de películas
+- Calificación de películas
+- Guardado de películas calificadas
+- Lista personalizada de películas calificadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologías utilizadas
+- Next.js
+- React
+- TypeScript
+- Zustand (para manejo de estado global)
+- React Query (para manejo de solicitudes a la API)
+- Axios (para llamadas a la API)
+- TheMovieDB API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación
+1. Clona este repositorio
+2. Instala las dependencias con `npm install`
+3. Crea un archivo `.env.local` en la raíz del proyecto y añade tu API key de TheMovieDB:
+    NEXT_PUBLIC_API_KEY=_api_key_
+    NEXT_PUBLIC_BASE_URL=https://api.themoviedb.org/3/
+4. Ejecuta el servidor de desarrollo con `npm run dev`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Uso
+- La página principal muestra un listado de películas populares
+- Usa la barra de búsqueda para encontrar películas específicas
+- Haz clic en una película para ver sus detalles
+- Una vez seleccionada la pelicula, puedes calificar.
+- Visita la página "My List" (/mylist) para ver tus películas calificadas.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Estructura del proyecto
+- `components/`: Componentes reutilizables de React
+- `app/`: Estructura de la aplicación
+- `lib/`: Funciones de utilidad y llamadas a la API
+- `store/`: Lógica de manejo de estado con Zustand
+- `hooks/`: Hooks personalizados
+- `types/`: Definiciones de tipos de TypeScript
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Estado
+Se inicia una nueva sesión de invitado que se almacena en el navegador y se actualiza en el estado cada vez que se recarga la página o se navega a otra. Utilizamos un estado centralizado para gestionar la información de la película que se desea puntuar. El rating es manejado localmente por el componente, pero se guarda el rating de la película para enviar la información a la API junto con la sesión de invitado. Se podría utilizar la gestión de estados para almacenar la información de las películas guardadas, aprovechamos esta funcionalidad proporcionada por la sesión de usuario. Los tests son de alguna funcionalidad básica.
