@@ -10,22 +10,27 @@ const api = axios.create({
   params: { api_key: API_KEY },
 });
 
-export const getPopularFilms = async (page: number) : Promise<MovieResponse> => {
+export const getPopularFilms = async (page: number): Promise<MovieResponse> => {
   try {
-    const response = await api.get('/movie/popular' , { params: { page } });
+    const response = await api.get('/movie/popular', { params: { page } });
     const totalPages = response.data.total_pages;
-    return { results: response.data.results, total_pages: totalPages} ;
+    return { results: response.data.results, total_pages: totalPages };
   } catch (error) {
     console.error('Error fetching popular films:', error);
     throw error;
   }
 };
 
-export const searchMovies = async (query: string, page: number): Promise<MovieResponse> => {
+export const searchMovies = async (
+  query: string,
+  page: number
+): Promise<MovieResponse> => {
   try {
-    const response = await api.get('/search/movie', { params: { query, page } });
+    const response = await api.get('/search/movie', {
+      params: { query, page },
+    });
     const totalPages = response.data.total_pages;
-    return {results : response.data.results, total_pages: totalPages};
+    return { results: response.data.results, total_pages: totalPages };
   } catch (error) {
     console.error('Error searching movie:', error);
     throw error;

@@ -9,13 +9,15 @@ type Props = {
   onClose: () => void;
 };
 
-export const MovieDetail = ({ movieInfo, onClose }: Props) => {
+export const MovieDetails = ({ movieInfo, onClose }: Props) => {
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
         <div className="bg-white shadow-2xl rounded-lg max-w-2xl w-full p-6 m-4">
           <div className="flex justify-end mb-4">
             <button
               onClick={onClose}
+              role="closebutton"
+              name='close'
               className="text-gray-600 hover:text-gray-800 transition duration-300 ease-in-out"
             >
               <svg
