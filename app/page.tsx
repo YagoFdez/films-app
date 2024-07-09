@@ -6,6 +6,7 @@ import { MovieDetail } from './components/MovieDetails/MovieDetails';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { useFilmStore } from './store/movieStore';
 import { useInitGuestSession } from './hooks/useInitGuestSession';
+import { NavBar } from './components/NavBar/NavBar';
 
 export default function Home() {
   useInitGuestSession();
@@ -14,8 +15,7 @@ export default function Home() {
   
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="min-h-screen bg-gray-100">
-        <div className="container mx-auto px-4 py-8">
+
           <header className="mb-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">Films</h1>
             <SearchBar />
@@ -27,8 +27,6 @@ export default function Home() {
               onClose={() => setSelectedMovie(null)}
             />
           )}
-        </div>
-      </main>
     </QueryClientProvider>
   );
 }
