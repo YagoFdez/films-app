@@ -37,6 +37,7 @@ export const MoviesList = () => {
                   objectFit="cover"
                   alt={`Poster of ${movie.title}`}
                   className="rounded-t-lg"
+                  aria-label='film poster'
                 />
               </div>
               <div className="p-4">
