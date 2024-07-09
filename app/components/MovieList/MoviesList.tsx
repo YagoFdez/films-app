@@ -30,7 +30,7 @@ export const MoviesList = () => {
               onClick={() => setSelectedMovie(movie)}
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
             >
-              <div className="relative aspect-w-2 aspect-h-3">
+              <div className="relative h-96">
                 <Image
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   layout="fill"
@@ -55,7 +55,7 @@ export const MoviesList = () => {
             disabled={page === 1}
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Before
+            Previous
           </button>
           <span className="text-gray-700 font-medium">
             Page {page} of {moviesData.total_pages}
