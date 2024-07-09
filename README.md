@@ -44,4 +44,4 @@ Esta es una mini-webapp de películas que permite a los usuarios ver un listado 
 - `types/`: Definiciones de tipos de TypeScript
 
 ## Estado
-Se inicia una nueva sesión de invitado que se almacena en el navegador y se actualiza en el estado cada vez que se recarga la página o se navega a otra. Utilizamos un estado centralizado para gestionar la información de la película que se desea puntuar. El rating es manejado localmente por el componente, pero se guarda el rating de la película para enviar la información a la API junto con la sesión de invitado. Se podría utilizar la gestión de estados para almacenar la información de las películas guardadas, aprovechamos esta funcionalidad proporcionada por la sesión de usuario. Los tests son de alguna funcionalidad básica.
+El estado centralizado se usa para gestionar la información de la película que se ha seleccionado y que se desea puntuar, enviando la información a la API con la sesión de invitado. Se podría utilizar la gestión de estados para almacenar la información de las películas guardadas, pero aprovechamos esta funcionalidad proporcionada por la sesión de usuario. Los tests son de alguna funcionalidad básica.
